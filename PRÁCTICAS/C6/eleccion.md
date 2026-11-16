@@ -2,26 +2,18 @@
 
 ## 1. Mi proceso y sus datos
 
-**Proceso:** buscar a un huésped por nombre en el registro del Hostal Kantu Flor (Copacabana). Hoy el registro es una hoja diaria de 
-hospedaje escrita a mano, sin orden por nombre. Se usa, por ejemplo, cuando un huésped vuelve a reclamar un objeto olvidado y hay que 
-saber en qué habitación y qué fechas estuvo.
+**Proceso:** buscar a un huésped por nombre en el registro del Hostal Kantu Flor (Copacabana). Hoy el registro es una hoja diaria de hospedaje escrita a mano, sin orden por nombre. Se usa, por ejemplo, cuando un huésped vuelve a reclamar un objeto olvidado y hay que saber en qué habitación y qué fechas estuvo.
 
 **Cuántos datos:**
 - El hostal tiene 20 habitaciones y una hoja por día (unas 365 al año).
-- **Hoy:** unas 3.000 filas ocupadas acumuladas en el último año (estimación, con ocupación promedio de la mitad de las
-- habitaciones: 20 x 0,5 x 365).
+- **Hoy:** unas 3.000 filas ocupadas acumuladas en el último año (estimación, con ocupación promedio de la mitad de las habitaciones: 20 x 0,5 x 365).
 - **Peor mes:** 600 filas (las 20 habitaciones ocupadas todos los días, 20 x 30).
 - **Peor año:** 7.300 filas (20 x 365, todo lleno todo el año).
-*Nota: el peor mes (600 filas) y el peor año (7.300 filas) son el máximo teórico, con las 20 habitaciones ocupadas todos los días.
-En la realidad la ocupación varía (hay días vacíos y temporadas altas como agosto), así que el valor esperado es menor, pero uso el
-máximo para estar segura de que mi elección aguanta el peor escenario.*
+*Nota: el peor mes (600 filas) y el peor año (7.300 filas) son el máximo teórico, con las 20 habitaciones ocupadas todos los días. En la realidad la ocupación varía (hay días vacíos y temporadas altas como agosto), así que el valor esperado es menor, pero uso el máximo para estar segura de que mi elección aguanta el peor escenario.*
 
 ## 2. La operación que más pesa
 
-**Ordenar el registro por nombre.** Mi objetivo es poder buscar rápido a un huésped, y para usar búsqueda binaria los datos tienen 
-que estar ordenados. Ordenar es el costo que hay que pagar para ganar velocidad al buscar. Además, cada huésped nuevo hay que ubicarlo
-en su lugar para que la lista siga ordenada. Buscar se repite muchas veces, pero lo que decide qué tan bien funciona mi sistema es cómo
-ordeno.
+**Ordenar el registro por nombre.** Mi objetivo es poder buscar rápido a un huésped, y para usar búsqueda binaria los datos tienen que estar ordenados. Ordenar es el costo que hay que pagar para ganar velocidad al buscar. Además, cada huésped nuevo hay que ubicarlo en su lugar para que la lista siga ordenada. Buscar se repite muchas veces, pero lo que decide qué tan bien funciona mi sistema es cómo ordeno.
 
 ## 3. Dos candidatos de ordenamiento
 
@@ -34,8 +26,7 @@ ordeno.
 
 ## 4. Mi elección y por qué
 
-**Elijo MergeSort (en la práctica, el sort del lenguaje) para ordenar el registro completo, e Inserción solo para agregar un huésped
-nuevo a una lista que ya está ordenada.**
+**Elijo MergeSort (en la práctica, el sort del lenguaje) para ordenar el registro completo, e Inserción solo para agregar un huésped nuevo a una lista que ya está ordenada.**
 
 **Por qué:**
 - Pienso en el peor caso. Con 7.300 filas (todo lleno todo el año), Inserción hace millones de comparaciones, mientras que MergeSort garantiza n log n sin importar cómo vengan los datos.
