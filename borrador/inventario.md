@@ -1,4 +1,4 @@
-[Tu nombre completo]
+
 
 # Inventario de operaciones: registro de huéspedes del hostal
 
