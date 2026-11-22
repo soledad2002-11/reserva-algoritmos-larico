@@ -33,6 +33,10 @@ Uso n = 120.000 y log2(n) ≈ 16,9. Cuento pasos o comparaciones, no segundos, y
 
 La lista simple cuesta unas 2.800 veces más. Sus dos operaciones caras, preparar y consultar, recorren toda la lista cada vez (O(n)). Con mi solución preparar cuesta O(log n) y consultar O(1).
 
+La lista simple cuesta unas 2.800 veces más. Sus dos operaciones caras, preparar y consultar, recorren toda la lista cada vez (O(n)). Con mi solución preparar cuesta O(log n) y consultar O(1).
+
+Estos totales son una cota superior: supongo que la lista está llena al hacer las consultas y que los 120.000 pedidos llegan antes de prepararlos. En una jornada real con llegadas y preparaciones mezcladas, la lista tendría menos pedidos y los números serían menores, pero cada operación seguiría costando O(n).
+
 ## 5. Por qué esta combinación y no otra
 - **Solo un heap:** preparar sería barato, pero EstaPendiente costaría O(n), que son 40.000 x 120.000 = 4.800 millones de pasos, y se perdería la ventaja.
 - **Solo un set o diccionario:** consultar sería O(1), pero sacar el menor costaría O(n) (hay que revisar todo): unos 7.200 millones en total.
@@ -43,6 +47,6 @@ La lista simple cuesta unas 2.800 veces más. Sus dos operaciones caras, prepara
 El heap guarda tuplas (plazo, llegada, nombre). Python compara primero el plazo y, si empatan, el número de llegada, que sube de uno en uno. Así, con el mismo plazo sale primero el que llegó antes. El nombre nunca se compara, porque el número de llegada es único.
 
 ## 7. Condiciones en las que cambiaría de opinión
-- **Si se agregara "cancelar un pedido"** (sacar uno cualquiera): en el heap eso cuesta O(n), porque hay que encontrarlo. Pasaría a un árbol balanceado ordenado por (plazo, llegada), donde borrar cuesta O(log n).
-- **Si pidieran "los pedidos con plazo entre 30 y 60 minutos"** (un rango): también un árbol balanceado, con O(log n + k), porque el heap no sabe de rangos.
-- **Si hubiera muy pocos pendientes** (unas decenas): con 20 pedidos la lista recorre 20 pasos y el heap unos 4, una diferencia irrelevante. Elegiría la lista simple y no mantendría dos estructuras.
+- **Si se agregara "cancelar un pedido"** (sacar uno cualquiera): en el heap no puedo sacar un elemento del medio en O(log n). Podría marcarlo como cancelado en el set y saltarlo cuando salga del heap (borrado perezoso), pero los cancelados ocuparían memoria y, si fueran muchos, el heap crecería de más. Si se cancelara con frecuencia (por ejemplo, más del 10 % de los pedidos, una cifra que propongo y no medí), cambiaría a un árbol balanceado ordenado por (plazo, llegada), donde borrar cuesta O(log n).
+- **Si pidieran "los pedidos con plazo entre 30 y 60 minutos"** (un rango): también cambiaría a un árbol balanceado, con O(log n + k), porque el heap no sabe de rangos.
+- **Si hubiera muy pocos pendientes** (menos de unos 16, donde log2 n ≈ 4): la lista recorre pocos pasos y la diferencia con el heap es de apenas unos pasos, así que usaría la lista simple y no mantendría dos estructuras.
