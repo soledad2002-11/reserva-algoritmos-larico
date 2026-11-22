@@ -10,6 +10,19 @@ Cada registro nuevo se guarda en las dos. Elijo según las operaciones que más 
 
 ## 2. Costo O de cada operación con mi elección
 
+**Tabla resumen (operaciones ordenadas de la más frecuente a la menos frecuente):**
+
+| Operacion | Cuantas veces la haces | Costo O |
+|---|---|---|
+| Buscar por clave (huésped) | unas 7.300 al año | O(1) en promedio (tabla hash) |
+| Insertar | unas 3.650 al año | O(log n) (tabla hash + árbol balanceado) |
+| El menor o el siguiente | unas 730 al año | O(log n) (árbol balanceado) |
+| Borrar | unas 100 al año | O(log n) (tabla hash + árbol balanceado) |
+| Buscar por rango de fechas | unas 30 al año | O(log n + k) (árbol balanceado) |
+| Recorrer en orden | 12 al año | O(n) (árbol balanceado) |
+
+**Detalle de cada operación y su porqué:**
+
 n = filas guardadas (unas 3.650 hoy, hasta 7.300 en el peor año).
 
 | Operación | Veces por año | Estructura | Costo O | Por qué |
