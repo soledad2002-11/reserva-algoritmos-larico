@@ -21,6 +21,8 @@ Cada registro nuevo se guarda en las dos. Elijo según las operaciones que más 
 | Buscar por rango de fechas | unas 30 al año | O(log n + k) (árbol balanceado) |
 | Recorrer en orden | 12 al año | O(n) (árbol balanceado) |
 
+k = cuántos resultados devuelve el rango.
+
 **Detalle de cada operación y su porqué:**
 
 n = filas guardadas (unas 3.650 hoy, hasta 7.300 en el peor año).
@@ -55,6 +57,6 @@ Calculé cuántos pasos cuesta todo mi año con cada estructura, multiplicando e
 - Todos estos números son **estimaciones** de cómo trabaja mi hostal (ver inventario.md). Cuento pasos, no segundos.
 - La tabla hash solo encuentra coincidencias exactas. Si buscara por un nombre parcial o aproximado, no me serviría.
 - El O(1) de la tabla hash depende del factor de carga α (datos / casilleros). Si los casilleros no crecen, cada búsqueda cuesta cerca de α, o sea O(n). La cura es el rehash: cuando α pasa de 0,75 se duplican los casilleros y se reubican las claves.
-- El árbol tiene que estar **balanceado**: si los datos llegan ya ordenados (por ejemplo por fecha) y el árbol no se reacomoda, se degenera en una lista y cuesta O(n). Los árboles balanceados (AVL, rojinegros) se reacomodan solos, y mi lenguaje los trae o hay librerías.
+- El árbol tiene que estar **balanceado**: si los datos llegan ya ordenados (por ejemplo por fecha) y el árbol no se reacomoda, se degenera en una lista y cuesta O(n). Los árboles balanceados (AVL, rojinegros) se reacomodan solos. En clase se vio que otros lenguajes ya los traen (SortedSet en C#, TreeSet en Java, std::set en C++). En Python no hay uno en la librería estándar, así que usaría una librería externa como sortedcontainers; no la medí.
 - Mantener dos estructuras cuesta más memoria y hay que actualizar las dos al insertar y borrar. Lo acepto porque mis datos son pocos.
-- Con 3.650 filas, incluso una lista sin orden tardaría milisegundos en una computadora. Elijo estas estructuras pensando en el peor caso y en que el registro crezca, y lo compruebo con una medición.
+- Con 3.650 filas, incluso una lista sin orden tardaría milisegundos en una computadora. Elijo estas estructuras pensando en el peor caso y en que el registro crezca. En medicion.md comprobé solo la operación que más hago, buscar por clave (lista contra tabla hash); el árbol lo justifico con las cuentas de la sección 3 y no lo medí.
