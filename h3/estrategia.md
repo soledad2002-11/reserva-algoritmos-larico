@@ -24,7 +24,7 @@ Probé el voraz de aceptar primero la solicitud que paga más por habitación-no
 
 Aquí la propiedad (2) sí se cumple, porque después de aceptar A queda el mismo problema con capacidad 4. Lo que falla es la propiedad (1): la elección local de A no lleva al óptimo. Por eso **mi caso NO admite un voraz** para maximizar el dinero.
 
-Además, con mi código probé 200 casos al azar con 12 solicitudes y capacidad 140, y el voraz no llegó al óptimo en [PON AQUÍ EL NÚMERO QUE TE SALIÓ AL EJECUTAR comparacion.py] de ellos. Falla pocas veces, pero un voraz tiene que acertar siempre, y basta un contraejemplo para descartarlo.
+Además, con mi código probé 200 casos al azar con 12 solicitudes y capacidad 140, y el voraz no llegó al óptimo enAdemás, con mi código probé 200 casos al azar con 12 solicitudes y capacidad 140, y el voraz no llegó al óptimo en 5 de ellos (2,5 %). Falla pocas veces, pero un voraz tiene que acertar siempre, y basta un contraejemplo para descartarlo. de ellos. Falla pocas veces, pero un voraz tiene que acertar siempre, y basta un contraejemplo para descartarlo.
 
 El voraz sí serviría si el objetivo fuera otro: aceptar la mayor cantidad de solicitudes, porque en ese caso aceptar primero las que ocupan menos habitaciones-noche es una elección local segura. Pero mi objetivo es el dinero.
 
