@@ -46,7 +46,7 @@ Mi solución cuesta O(n · C), así que depende del **valor** de C. Con n = 1.00
 - **Memoria (el problema más serio):** mi tabla de decisiones ocupa n x C bytes = 1.000 x 10^9 = 10^12 bytes, o sea 1 terabyte, y el arreglo `mejor` tendría 10^9 entradas (unos 8 GB en Python). No cabría en la memoria y se caería antes de terminar.
 - **Por qué pasa:** mi algoritmo es pseudopolinomial, o sea que su costo crece con el valor de C y no con la cantidad de dígitos para escribirlo. Escribir 10^9 usa "solo" 10 dígitos, pero la tabla tendría mil millones de columnas.
 - **Qué haría:**
-  1. Armar la tabla por **ganancia** en vez de por capacidad: dp[g] sería el menor peso con el que consigo la ganancia g. Como cada ganancia es a lo sumo 99, con 1.000 paquetes la ganancia total es a lo sumo 99.000, así que serían unos 1.000 x 99.000 = 99 millones de celdas, sin importar cuánto valga C.
+   1. Armar la tabla por **ganancia** en vez de por capacidad: dp[g] sería el menor peso con el que consigo la ganancia g. Como cada ganancia es a lo sumo 99, con 1.000 paquetes la ganancia total es a lo sumo 99.000, así que serían unos 1.000 x 99.000 = 99 millones de celdas, sin importar cuánto valga C. La tabla de decisiones para saber qué paquetes elegí ocuparía unos 99 MB, que sí caben. Son unas 10 veces más celdas que los 10 millones que medí con C = 10.000 (1.138,4 ms), así que tardaría unos 11 segundos (estimación por escala, no medida).
   2. Si hubiera pocos paquetes (unos 40 o menos), dividirlos en dos mitades y combinar los resultados, con costo O(2^(n/2)).
   3. Aceptar una solución aproximada.
   El problema de la mochila es NP-difícil y no se conoce un algoritmo polinomial en el tamaño de la entrada.
