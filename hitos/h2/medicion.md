@@ -1,5 +1,3 @@
-[Tu nombre completo]
-
 # H2 Medición: buscar a un huésped por su nombre
 
 ## El problema
