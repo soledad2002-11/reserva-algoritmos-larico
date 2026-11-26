@@ -13,7 +13,7 @@ El Hostal Kantu Flor (Copacabana) tiene 20 habitaciones y registra a sus huéspe
 | H2: la estructura de mi caso | Inventario de operaciones, estructura (tabla hash + árbol balanceado) y medición | [hitos/h2/](hitos/h2/) |
 | Parcial 2 | Pedidos de una pastelería: heap + set contra lista simple | [parcial2/](parcial2/) |
 | Evaluación integradora | Furgoneta de reparto (mochila): análisis, programación dinámica y medición | [integradora/](integradora/) |
-| H3: la estrategia de mi caso | ¿Voraz o programación dinámica? Argumento y comparación medida con fuerza bruta | [hitos/h3/](hitos/h3/) |
+| H3: la estrategia de mi caso | ¿Voraz o programación dinámica? Argumento y comparación medida con fuerza bruta | [h3/](h3/) |
 
 ## Resultados clave (medidos en mi computadora)
 - Con 1.000.000 de datos, la búsqueda binaria fue 11.087 veces más rápida que la lineal (C4).
