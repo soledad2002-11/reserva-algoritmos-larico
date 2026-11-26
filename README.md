@@ -34,4 +34,4 @@ Todas las mediciones usan el mismo protocolo: 1 corrida de calentamiento (descar
 - **Falta para la defensa:** repasar y poder explicar cada archivo con mis palabras, y comprobar que todos los enlaces de este índice abran.
 
 ## Cómo ejecutar el código
-Está escrito en Python 3.12. Por ejemplo: `python comparacion.py` dentro de `hitos/h3/`.
+Está escrito en Python 3.12. Por ejemplo: `python comparacion.py` dentro de `h3/`.
