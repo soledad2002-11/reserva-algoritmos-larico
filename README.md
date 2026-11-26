@@ -8,7 +8,7 @@ El Hostal Kantu Flor (Copacabana) tiene 20 habitaciones y registra a sus huéspe
 | Parte | Qué contiene | Enlace |
 |---|---|---|
 | H1: mi proceso lento | Descripción del proceso y muestra de 20 filas (simulada, con el formato real de mi hoja) | [h1/](h1/) |
-| Prácticas C4, C5 y C6 | Búsqueda lineal contra binaria, torneo de ordenamientos y elección del algoritmo | [PRÁCTICAS/](PR%C3%81CTICAS/) |
+| Prácticas C3, C4, C5 y C6 | Medición empírica de crecimiento, búsqueda lineal contra binaria, torneo de ordenamientos y elección del algoritmo | [PRÁCTICAS/](PR%C3%81CTICAS/) | |
 | Parcial 1 | Costos, recurrencias, cura de un código lento y elección con números | [parcial1/](parcial1/) |
 | H2: la estructura de mi caso | Inventario de operaciones, estructura (tabla hash + árbol balanceado) y medición | [hitos/h2/](hitos/h2/) |
 | Parcial 2 | Pedidos de una pastelería: heap + set contra lista simple | [parcial2/](parcial2/) |
