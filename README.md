@@ -28,10 +28,4 @@ Todas las mediciones usan el mismo protocolo: 1 corrida de calentamiento (descar
 - Las cantidades de operaciones por día y por año (por ejemplo, unas 3.650 filas al año) son estimaciones de cómo trabaja el hostal, no mediciones.
 - Los datos de las mediciones de las prácticas, parciales e hitos son simulados.
 
-## Estado: lo que falta
-- **H3:** estrategia, comparación medida y este README, listos.
-- **Evaluación integradora:** entregada en [integradora/](integradora/).
-- **Falta para la defensa:** repasar y poder explicar cada archivo con mis palabras, y comprobar que todos los enlaces de este índice abran.
 
-## Cómo ejecutar el código
-Está escrito en Python 3.12. Por ejemplo: `python comparacion.py` dentro de `h3/`.
